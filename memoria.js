@@ -1,16 +1,18 @@
 const cardBoard = document.querySelector("#cardboard");
-const imgs = [
+let imgs = [
   "vue.svg",
   "angular.svg",
   "react.svg",
   "ember.svg",
-  "backbone.svg",
+  "php elefantinho.png",
   "aurelia.svg",
   "lua.png",
   "python.png"
 ];
 
 let cardHTML = "";
+
+imgs = randomImgs(imgs);
 
 imgs.forEach(img => {
   cardHTML += `<div class="memory-card" data-card="${img}">
@@ -26,6 +28,26 @@ cardBoard.innerHTML = cardHTML + cardHTML;
 const cards = document.querySelectorAll(".memory-card");
 let firstCard, secondCard;
 let lockCards = false;
+
+function randomImgs(imgsinOrder){
+
+  let imgsRandom = [];
+
+  while(imgsinOrder.length() != imgsRandom.length()){
+
+    let index = Math.floor(Math.random() * imgsinOrder.length());
+
+    if (imgsRandom.indexOf(imgsinOrder[index]) < 0){
+
+      imgsRandom.push(imgsinOrder[index]);
+
+    }
+
+  }
+
+  return imgsRandom;
+
+}
 
 function flipCard() {
 
