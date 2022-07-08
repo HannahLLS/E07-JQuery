@@ -33,9 +33,9 @@ function randomImgs(imgsinOrder){
 
   let imgsRandom = [];
 
-  while(imgsinOrder.length() != imgsRandom.length()){
+  while(imgsinOrder.length != imgsRandom.length){
 
-    let index = Math.floor(Math.random() * imgsinOrder.length());
+    let index = Math.floor(Math.random() * imgsinOrder.length);
 
     if (imgsRandom.indexOf(imgsinOrder[index]) < 0){
 
